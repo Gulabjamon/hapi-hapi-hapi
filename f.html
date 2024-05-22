@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Countdown</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .countdown {
+    font-size: 5em;
+    text-align: center;
+
+  }
+  .go {
+    color: rgb(30, 9, 124);
+  font-size: 4em;
+  font-weight: 600;
+  }
+  .button {
+    display: inline-block;
+  padding: 10px 20px;
+
+  position: absolute;bottom: 80px;
+  background-color: #f18900; /* Button background color */
+  color: #ffffff; /* Button text color */
+  text-decoration: none;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  font-weight: 500;
+}
+ #goButton {
+  display: none;
+
+}
+.button:hover {
+  background-color: #c06600; /* Button background color on hover */
+
+}
+    .birthday{
+    color: rgb(0, 0, 0); /* Change font color to red */
+    font-size: 1em; /* Change font size */
+    }
+    .varda {
+    color: rgb(0, 0, 0); /* Change font color to red */
+    font-size: 30px; /* Change font size */
+    
+    margin: 3px;
+
+    }
+    .b{
+    color: rgb(0, 0, 0); /* Change font color to red */
+    font-size: 60px; /* Change font size */
+    }
+    
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Product Sans';
+}
+
+html,
+body {
+    
+    width: 100%;
+    height: 100%;
+    background: #d8e6fc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    font-size: 4rem;
+
+}
+.newline {
+    display: block; /* Display each paragraph on a separate line */
+  }
+
+ 
+</style>
+</head>
+<body>
+<div class="countdown" id="countdown">5</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', 
+function countdown() {
+        var count = 5;
+        var timer = setInterval(function() {
+            document.getElementById('countdown').innerHTML = count;
+            count--;
+            if (count < 0) {
+                clearInterval(timer);
+                document.getElementById('countdown').innerHTML = '<span class="birthday">Happy 19th Birthday<span><br><span class ="varda">to my batman!</span><br><span class="b"><strong>Talha <3</strong></span>';
+
+   s         }
+        }, 1000);
+    }
+
+);
+window.onload = countdown;
+    function showButton() {
+        document.getElementById("goButton").style.display = "block";
+    }
+
+    // Call the function after 8 seconds
+    setTimeout(showButton, 7000);
+</script>
+<script src="confetti.js"></script>
+<script>
+
+  // start
+
+  const start = () => {
+      setTimeout(function() {
+          confetti.start()
+      }, 7000); // 7000 is time that after 7 second start the confetti ( 7000 = 7 sec)
+  };
+
+  //  Stop
+
+  const stop = () => {
+      setTimeout(function() {
+          confetti.stop()
+      }, 5000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
+  };
+
+  start();
+  stop();
+</script>
+<a href="cake.html" class="button" id="goButton">Click here</a>
+</body>
+</html>
